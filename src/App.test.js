@@ -4,6 +4,12 @@ import userEvent from "@testing-library/user-event";
 import App from "./App";
 import { replaceCamelWithSpaces } from "./App";
 
+test("renders learn react link", () => {
+  render(<App />); // renders App component
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
 /*
   Break down syntax
   
@@ -16,10 +22,7 @@ import { replaceCamelWithSpaces } from "./App";
   /learn react/i :  regular expression , case sensitive 
 
   "learn react" can use string
-
-   expect(linkElement).toBeInTheDocument() : assertion  causes the test to succeed or fail
-  
-  // Matching a string:
+    // Matching a string:
   getByText('Hello World') // full string match
   getByText('llo Worl', {exact: false}) // substring match
   getByText('hello world', {exact: false}) // ignore case
@@ -32,14 +35,23 @@ import { replaceCamelWithSpaces } from "./App";
 
   // Matching with a custom function:
   getByText((content, element) => content.startsWith('Hello'))
+  
+
+   expect(linkElement).toBeInTheDocument() : assertion  causes the test to succeed or fail
+    expect(linkElement).toBeInTheDocument():
+    * expect : Global starts the assertion
+    * linkElement: subject of assertion
+    * toBeInTheDocument:
+      - matcher : type of assertion
+      -  this matcher comes from Jest - DOM
+      -   matcher takes optional argument
+
+    More Assertion Examples :
+      * expect(ele.textContent).toBe('Hello');
+      * expect(eleArray).toHaveLength(7);
+
 
 */
-
-test("renders learn react link", () => {
-  render(<App />); // renders App component
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
 
 xtest("button has correct initial color", () => {
   render(<App />);

@@ -16,26 +16,6 @@
 
 ```
 
-## Jest Assertions:
-
-```
-expect(linkElement).toBeInTheDocument():
-  * expect : Global starts the assertion
-  * linkElement: subject of assertion
-  * toBeInTheDocument:
-    - matcher : type of assertion
-    -  this matcher comes from Jest - DOM
-    -   matcher takes optional argument
-
-More Assertion Examples :
-  * expect(ele.textContent).toBe('Hello');
-  * expect(eleArray).toHaveLength(7);
-
-Jest Matchers [https://jestjs.io/docs/using-matchers]
-
-
-```
-
 ## Jest DOM:
 
 ```

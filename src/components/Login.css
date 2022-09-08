@@ -1,0 +1,19 @@
+.formInput {
+  width: 400px;
+}
+
+.formInput label {
+  width: 50%;
+  margin: 10px;
+}
+
+.formInput input {
+  width: 100%;
+  margin: 10px;
+  padding: 4px;
+}
+
+.formContainer button {
+  margin: 10px;
+  padding: 4px;
+}

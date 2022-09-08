@@ -56,7 +56,8 @@ function useFormSubmission({ endpoint, data }) {
         })
         .then(async (response) => {
           const data = await response.json();
-          if (response.ok) {
+
+          if (data.code === 0) {
             dispatch({ type: "RESOLVE", responseData: data });
           } else {
             dispatch({ type: "REJECT", error: data });

@@ -3,7 +3,7 @@
 // and password when the user submits the form.
 
 import * as React from "react";
-
+import "./Login.css";
 function Login({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
@@ -15,18 +15,17 @@ function Login({ onSubmit }) {
     });
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="formContainer">
+      <div className="formInput">
         <label htmlFor="email-field">Email</label>
         <input id="email-field" name="email" type="text" />
       </div>
-      <div>
+      <div className="formInput">
         <label htmlFor="password-field">Password</label>
         <input id="password-field" name="password" type="password" />
       </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
+
+      <button type="submit">Submit</button>
     </form>
   );
 }

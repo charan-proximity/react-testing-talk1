@@ -3,9 +3,9 @@ import "./NavBar.css";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <header class="header">
-      <div class="mid">
-        <ul class="navbar">
+    <header className="header">
+      <div className="mid">
+        <ul className="navbar">
           <li>
             <Link to="/">counter</Link>
           </li>

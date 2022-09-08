@@ -52,7 +52,7 @@ xtest("omitting the password results in an error", async () => {
   expect(screen.getByRole("alert")).toHaveTextContent("password required");
 });
 
-xtest("unknown server error displays the error message", async () => {
+test("unknown server error displays the error message", async () => {
   const testErrorMessage = "Oh no, something bad happened";
   server.use(
     rest.post(

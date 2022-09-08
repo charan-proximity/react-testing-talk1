@@ -35,13 +35,13 @@ function FetchGreeting() {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const fetchGreeting = async () => {
+    setButtonClicked(true);
     axios
       .get("/greeting")
       .then((response) => {
         const { data } = response;
         const { greeting } = data;
         dispatch({ type: "SUCCESS", greeting });
-        setButtonClicked(true);
       })
       .catch((error) => {
         dispatch({ type: "ERROR", error });

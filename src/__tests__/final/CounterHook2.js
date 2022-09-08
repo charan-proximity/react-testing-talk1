@@ -1,7 +1,5 @@
 // testing custom hooks
 // 💯 setup function
-// http://localhost:3000/counter-hook
-
 import * as React from "react";
 import { render, act } from "@testing-library/react";
 import useCounter from "../../components/useCounter";
@@ -19,6 +17,11 @@ function setup({ initialProps } = {}) {
 xtest("exposes the count and increment/decrement functions", () => {
   const result = setup();
   expect(result.current.count).toBe(0);
+  // When testing, code that causes React state updates should be wrapped into act(...):
+
+  // act(() => {
+  //   /* fire events that update state */
+  // });
   act(() => result.current.increment());
   expect(result.current.count).toBe(1);
   act(() => result.current.decrement());

@@ -18,7 +18,7 @@ xtest("submitting the form calls onSubmit with email and password", async () => 
   let submittedData;
   const handleSubmit = (data) => (submittedData = data);
   render(<Login onSubmit={handleSubmit} />);
-  const email = "chucknorris";
+  const email = "sampleemail";
   const password = "i need no password";
 
   await userEvent.type(screen.getByLabelText(/email/i), email);

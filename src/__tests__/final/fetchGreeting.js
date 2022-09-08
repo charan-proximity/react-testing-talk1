@@ -49,6 +49,6 @@ xtest("handles server error", async () => {
   });
 
   await waitFor(() => {
-    expect(screen.getByRole("button")).not.toHaveAttribute("disabled");
+    expect(screen.getByRole("button")).toHaveAttribute("disabled");
   });
 });

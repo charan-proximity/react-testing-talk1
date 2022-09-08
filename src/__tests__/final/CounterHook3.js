@@ -30,11 +30,12 @@ xtest("allows customization of the step", () => {
   expect(result.current.count).toBe(0);
 });
 
-xtest("the step can be changed", () => {
+xtest("the step can be changed", async () => {
   const { result, rerender } = renderHook(useCounter, {
     initialProps: { step: 3 },
   });
   expect(result.current.count).toBe(0);
+
   act(() => result.current.increment());
   expect(result.current.count).toBe(3);
   rerender({ step: 2 });

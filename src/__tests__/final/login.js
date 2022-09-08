@@ -14,7 +14,7 @@ function buildLoginForm(overrides) {
   };
 }
 
-test("submitting the form calls onSubmit with email and password", async () => {
+xtest("submitting the form calls onSubmit with email and password", async () => {
   let submittedData;
   const handleSubmit = (data) => (submittedData = data);
   render(<Login onSubmit={handleSubmit} />);
@@ -31,7 +31,7 @@ test("submitting the form calls onSubmit with email and password", async () => {
   });
 });
 
-test("submitting the form calls onSubmit with email and password using faker n jest fn", async () => {
+xtest("submitting the form calls onSubmit with email and password using faker n jest fn", async () => {
   const handleSubmit = jest.fn();
   render(<Login onSubmit={handleSubmit} />);
   const { email, password } = buildLoginForm();

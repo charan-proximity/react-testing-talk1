@@ -1,8 +1,5 @@
-import { setupWorker } from "msw";
+import { setupServer } from "msw/node";
 import { handlers } from "./server-handlers";
 
-const server = setupWorker(...handlers);
-
-server.start({
-  quiet: true,
-});
+// This configures a request mocking server with the given request handlers.
+export const server = setupServer(...handlers);

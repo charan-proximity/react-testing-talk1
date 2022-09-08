@@ -5,7 +5,7 @@
 import { renderHook, act } from "@testing-library/react";
 import useCounter from "../../components/useCounter";
 
-test("exposes the count and increment/decrement functions", () => {
+xtest("exposes the count and increment/decrement functions", () => {
   const { result } = renderHook(useCounter);
   expect(result.current.count).toBe(0);
   act(() => result.current.increment());
@@ -14,14 +14,14 @@ test("exposes the count and increment/decrement functions", () => {
   expect(result.current.count).toBe(0);
 });
 
-test("allows customization of the initial count", () => {
+xtest("allows customization of the initial count", () => {
   const { result } = renderHook(useCounter, {
     initialProps: { initialCount: 3 },
   });
   expect(result.current.count).toBe(3);
 });
 
-test("allows customization of the step", () => {
+xtest("allows customization of the step", () => {
   const { result } = renderHook(useCounter, { initialProps: { step: 2 } });
   expect(result.current.count).toBe(0);
   act(() => result.current.increment());
@@ -30,7 +30,7 @@ test("allows customization of the step", () => {
   expect(result.current.count).toBe(0);
 });
 
-test("the step can be changed", () => {
+xtest("the step can be changed", () => {
   const { result, rerender } = renderHook(useCounter, {
     initialProps: { step: 3 },
   });

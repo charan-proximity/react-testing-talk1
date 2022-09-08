@@ -16,7 +16,7 @@ function setup({ initialProps } = {}) {
   return result;
 }
 
-test("exposes the count and increment/decrement functions", () => {
+xtest("exposes the count and increment/decrement functions", () => {
   const result = setup();
   expect(result.current.count).toBe(0);
   act(() => result.current.increment());
@@ -25,12 +25,12 @@ test("exposes the count and increment/decrement functions", () => {
   expect(result.current.count).toBe(0);
 });
 
-test("allows customization of the initial count", () => {
+xtest("allows customization of the initial count", () => {
   const result = setup({ initialProps: { initialCount: 3 } });
   expect(result.current.count).toBe(3);
 });
 
-test("allows customization of the step", () => {
+xtest("allows customization of the step", () => {
   const result = setup({ initialProps: { step: 2 } });
   expect(result.current.count).toBe(0);
   act(() => result.current.increment());

@@ -39,7 +39,7 @@ const server = setupServer(
 beforeAll(() => server.listen());
 afterAll(() => server.close());
 
-test(`logging in displays the user's email`, async () => {
+xtest(`logging in displays the user's email`, async () => {
   render(<Login />);
   const { email, password } = buildLoginForm();
 

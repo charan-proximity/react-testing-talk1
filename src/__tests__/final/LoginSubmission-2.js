@@ -10,8 +10,8 @@ import {
 } from "@testing-library/react";
 import { rest } from "msw";
 import userEvent from "@testing-library/user-event";
-import { setupServer } from "msw/node";
-import { handlers } from "../../mocks/server-handlers";
+
+import { server } from "../../mocks/server";
 import Login from "../../components/LoginSubmission";
 
 import { faker } from "@faker-js/faker";
@@ -22,12 +22,11 @@ function buildLoginForm(overrides) {
     ...overrides,
   };
 }
-const server = setupServer(...handlers);
 
 beforeAll(() => server.listen());
 afterAll(() => server.close());
 
-test(`logging in displays the user's email`, async () => {
+xtest(`logging in displays the user's email`, async () => {
   render(<Login />);
   const { email, password } = buildLoginForm();
 
@@ -40,7 +39,7 @@ test(`logging in displays the user's email`, async () => {
   expect(screen.getByText(email)).toBeInTheDocument();
 });
 
-test("omitting the password results in an error", async () => {
+xtest("omitting the password results in an error", async () => {
   render(<Login />);
   const { email } = buildLoginForm();
 
@@ -53,7 +52,7 @@ test("omitting the password results in an error", async () => {
   expect(screen.getByRole("alert")).toHaveTextContent("password required");
 });
 
-test("unknown server error displays the error message", async () => {
+xtest("unknown server error displays the error message", async () => {
   const testErrorMessage = "Oh no, something bad happened";
   server.use(
     rest.post(

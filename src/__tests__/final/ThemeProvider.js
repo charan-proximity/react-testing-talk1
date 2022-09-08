@@ -6,7 +6,7 @@ import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "../../components/Theme";
 import EasyButton from "../../components/EasyButton";
 
-test("renders with the light styles for the light theme", () => {
+xtest("renders with the light styles for the light theme", () => {
   const Wrapper = ({ children }) => (
     <ThemeProvider initialTheme="light">{children}</ThemeProvider>
   );
@@ -19,7 +19,7 @@ test("renders with the light styles for the light theme", () => {
   `);
 });
 
-test("renders with the dark styles for the dark theme", () => {
+xtest("renders with the dark styles for the dark theme", () => {
   const Wrapper = ({ children }) => (
     <ThemeProvider initialTheme="dark">{children}</ThemeProvider>
   );

@@ -14,9 +14,10 @@ function buildLoginForm(overrides) {
   };
 }
 
-xtest("submitting the form calls onSubmit with email and password", async () => {
+test("submitting the form calls onSubmit with email and password", async () => {
   let submittedData;
   const handleSubmit = (data) => (submittedData = data);
+
   render(<Login onSubmit={handleSubmit} />);
   const email = "sampleemail";
   const password = "i need no password";
@@ -31,9 +32,11 @@ xtest("submitting the form calls onSubmit with email and password", async () => 
   });
 });
 
-xtest("submitting the form calls onSubmit with email and password using faker n jest fn", async () => {
+test("submitting the form calls onSubmit with email and password using faker n jest fn", async () => {
   const handleSubmit = jest.fn();
+
   render(<Login onSubmit={handleSubmit} />);
+
   const { email, password } = buildLoginForm();
 
   await userEvent.type(screen.getByLabelText(/email/i), email);
@@ -44,5 +47,6 @@ xtest("submitting the form calls onSubmit with email and password using faker n 
     email,
     password,
   });
+
   expect(handleSubmit).toHaveBeenCalledTimes(1);
 });

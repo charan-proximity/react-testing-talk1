@@ -80,7 +80,7 @@ function LoginSubmission() {
     <>
       {status === "resolved" ? (
         <div>
-          Welcome <strong>{responseData.data.Email}</strong>
+          Welcome <button>{responseData.data.Email}</button>
         </div>
       ) : (
         <Login onSubmit={(data) => setFormData(data)} />

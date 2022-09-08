@@ -6,6 +6,7 @@ function render(ui, { theme = "light", ...options } = {}) {
   const Wrapper = ({ children }) => (
     <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
   );
+
   return rtlRender(ui, { wrapper: Wrapper, ...options });
 }
 

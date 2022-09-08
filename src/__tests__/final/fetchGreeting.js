@@ -21,7 +21,7 @@ afterEach(() => server.resetHandlers());
 // Disable API mocking after the tests are done.
 afterAll(() => server.close());
 
-xtest("loads and displays greeting", async () => {
+test("loads and displays greeting", async () => {
   render(<FetchGreeting />);
 
   userEvent.click(screen.getByText("Load Greeting"));
@@ -31,7 +31,7 @@ xtest("loads and displays greeting", async () => {
   expect(screen.getByRole("button")).toHaveAttribute("disabled");
 });
 
-xtest("handles server error", async () => {
+test("handles server error", async () => {
   server.use(
     rest.get("/greeting", (req, res, ctx) => {
       return res(ctx.status(500));

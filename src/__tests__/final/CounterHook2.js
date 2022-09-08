@@ -14,7 +14,7 @@ function setup({ initialProps } = {}) {
   return result;
 }
 
-xtest("exposes the count and increment/decrement functions", () => {
+test("exposes the count and increment/decrement functions", () => {
   const result = setup();
   expect(result.current.count).toBe(0);
   // When testing, code that causes React state updates should be wrapped into act(...):
@@ -28,16 +28,16 @@ xtest("exposes the count and increment/decrement functions", () => {
   expect(result.current.count).toBe(0);
 });
 
-xtest("allows customization of the initial count", () => {
+test("allows customization of the initial count", () => {
   const result = setup({ initialProps: { initialCount: 3 } });
   expect(result.current.count).toBe(3);
 });
 
-xtest("allows customization of the step", () => {
-  const result = setup({ initialProps: { step: 2 } });
+test("allows customization of the step", () => {
+  const result = setup({ initialProps: { step: 3 } });
   expect(result.current.count).toBe(0);
   act(() => result.current.increment());
-  expect(result.current.count).toBe(2);
+  expect(result.current.count).toBe(3);
   act(() => result.current.decrement());
   expect(result.current.count).toBe(0);
 });

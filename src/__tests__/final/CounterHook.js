@@ -17,7 +17,7 @@ function UseCounterHookExample() {
   );
 }
 
-xtest("exposes the count and increment/decrement functions", async () => {
+test("exposes the count and increment/decrement functions", async () => {
   render(<UseCounterHookExample />);
   const increment = screen.getByRole("button", { name: /increment/i });
   const decrement = screen.getByRole("button", { name: /decrement/i });
